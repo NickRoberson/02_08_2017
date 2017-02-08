@@ -1,0 +1,17 @@
+We can modify the dictionary data structure by adding two fields to it. These are
+maximum and minimum and they will store the running min and max words that are in
+the dictionary.
+
+We can modify the insert and delete functions like so:
+
+  For insert we can check to see if the value is less than the running min or
+  more than the running max. If so we update the necessary value stored.
+
+  For delete we can check to see if the value deleted is the min or the max. If so
+  then we choose the next smallest or next largest and update the value.
+
+  This way both the insert and delete functions will still take O(log(n)) time,
+  but now we are able to modify the max() and min() functions appropriately. 
+
+This way when we go to call the min() and max() functions we can just return
+these values stored in the dictionary. This will take O(1) time.
